@@ -211,9 +211,9 @@ export default function Home() {
           marginTop: "25px",
         }}
       >
-        <h3>Siksha Update</h3>
+        <h3>Shiksha Update</h3>
         <p>Fast • Accurate • Trusted</p>
-        <p>© 2026 Siksha Update</p>
+        <p>© 2026 Shiksha Update</p>
       </footer>
 
       <a
