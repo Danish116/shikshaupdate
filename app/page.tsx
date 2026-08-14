@@ -1,202 +1,36 @@
-import BreakingTicker from "@/components/BreakingTicker";export default function Home() {
-  return (
-    <>
-      <style>{`
-        *{box-sizing:border-box}
-        body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb}
-        @keyframes ticker{
-          from{transform:translateX(100%)}
-          to{transform:translateX(-100%)}
-        }
-      `}</style>
-
-      <main>
-        {/* Header */}
-        <header
-          style={{
-            background: "linear-gradient(135deg,#071A52,#0B63F6)",
-            color: "white",
-            padding: "20px",
-            position: "sticky",
-            top: 0,
-            zIndex: 1000,
-          }}
-        >
-          <h1 style={{ color: "#FFD700", margin: 0 }}>🎓 Siksha Update</h1>
-          <p style={{ margin: "6px 0 12px" }}>Fast • Accurate • Trusted</p>
-
-          <input
-            placeholder="🔍 Search Jobs, Results, Admit Card..."
-            style={{
-              width: "100%",
-              padding: "12px",
-              borderRadius: "30px",
-              border: "none",
-              fontSize: "15px",
-            }}
-          />
-          <NavBar />
-<BreakingTicker />
-          <div
-            style={{
-              display: "flex",
-              overflowX: "auto",
-              gap: "10px",
-              marginTop: "15px",
-              whiteSpace: "nowrap",
-            }}
-          >
-            {[
-              "Latest Jobs",
-              "Result",
-              "Admit Card",
-              "Answer Key",
-              "Scholarship",
-              "Private Jobs",
-            ].map((item) => (
-              <span
-                key={item}
-                style={{
-                  background: "rgba(255,255,255,.15)",
-                  padding: "8px 14px",
-                  borderRadius: "20px",
-                  fontSize: "14px",
-                }}
-              >
-                {item}
-              </span>
-            ))}
-          </div>
-        </header>
-
-        {/* Breaking News */}
-        <div
-          style={{
-            background: "#E53935",
-            color: "white",
-            overflow: "hidden",
-            whiteSpace: "nowrap",
-            padding: "10px 0",
-            fontWeight: "bold",
-          }}
-        >
-          <div
-            style={{
-              display: "inline-block",
-              paddingLeft: "100%",
-              animation: "ticker 18s linear infinite",
-            }}
-          >
-            🔴 BREAKING: BPSC TRE 4.0 • Bihar Police • KVS Recruitment • Result • Admit Card • Private Teacher Jobs
-          </div>
-        </div>
-
-        {/* Hero Banner */}
-        <div
-          style={{
-            margin: "15px",
-            borderRadius: "18px",
-            overflow: "hidden",
-            background: "linear-gradient(135deg,#0B63F6,#071A52)",
-            color: "white",
-          }}
-        >
-          <img
-            src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200"
-            alt="Top News"
-            style={{
-              width: "100%",
-              height: "190px",
-              objectFit: "cover",
-            }}
-          />
-
-          <div style={{ padding: "16px" }}>
-            <span
-              style={{
-                background: "#E53935",
-                padding: "5px 10px",
-                borderRadius: "20px",
-                fontSize: "12px",
-                fontWeight: "bold",
-              }}
-            >
-              🔴 TOP NEWS
-            </span>
-
-            <h2 style={{ margin: "12px 0 8px" }}>
-              Bihar ki Aaj ki Top Education Updates
-            </h2>
-
-            <p style={{ margin: 0 }}>
-              Government Jobs • Private Jobs • Results • Admit Card
-            </p>
-          </div>
-        </div>
-
-        {/* Top Jobs */}
-        <div style={{ padding: "15px" }}>
-          <h2>🔥 Top Jobs Today</h2>
-
-          {[
-            "BPSC TRE 4.0",
-            "KVS Teacher Recruitment",
-            "Private School Teacher",
-            "Physics Wallah Hiring",
-            "Coaching Faculty Jobs",
-          ].map((job, i) => (
-            <div
-              key={i}
-              style={{
-                background: "white",
-                borderRadius: "14px",
-                padding: "15px",
-                marginTop: "12px",
-                boxShadow: "0 2px 8px rgba(0,0,0,.08)",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                }}
-              >
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const slides = [
     {
       title: "BPSC TRE 4.0 Notification",
-      image:
-        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200",
+      image: "https://picsum.photos/900/450?1",
     },
     {
       title: "KVS Teacher Recruitment",
-      image:
-        "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1200",
+      image: "https://picsum.photos/900/450?2",
     },
     {
       title: "Private School Teacher Jobs",
-      image:
-        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200",
+      image: "https://picsum.photos/900/450?3",
     },
   ];
 
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
+    const t = setInterval(() => {
+      setCurrent((p) => (p + 1) % slides.length);
     }, 3500);
-    return () => clearInterval(timer);
+    return () => clearInterval(t);
   }, []);
 
   return (
     <>
       <style>{`
-        *{box-sizing:border-box}
         body{margin:0;background:#f5f7fb;font-family:Arial,sans-serif}
         @keyframes ticker{
           from{transform:translateX(100%)}
@@ -210,23 +44,18 @@ export default function Home() {
             background: "linear-gradient(135deg,#071A52,#0B63F6)",
             color: "white",
             padding: "20px",
-            position: "sticky",
-            top: 0,
-            zIndex: 1000,
           }}
         >
           <h1 style={{ color: "#FFD700", margin: 0 }}>🎓 Siksha Update</h1>
-          <p style={{ margin: "6px 0 12px" }}>Fast • Accurate • Trusted</p>
+          <p>Fast • Accurate • Trusted</p>
 
           <input
-            placeholder="🔍 Search Jobs, Results, Admit Card..."
+            placeholder="🔍 Search Jobs..."
             style={{
               width: "100%",
               padding: "12px",
               borderRadius: "30px",
               border: "none",
-              outline: "none",
-              fontSize: "15px",
             }}
           />
 
@@ -235,7 +64,7 @@ export default function Home() {
               display: "flex",
               overflowX: "auto",
               gap: "10px",
-              marginTop: "16px",
+              marginTop: "15px",
               whiteSpace: "nowrap",
             }}
           >
@@ -244,25 +73,19 @@ export default function Home() {
               "📢 Jobs",
               "📄 Result",
               "🎫 Admit",
-              "📚 Answer Key",
               "🎓 Scholarship",
               "🏫 Private",
-              "📰 Current",
             ].map((item) => (
-              <button
+              <span
                 key={item}
                 style={{
-                  background: "rgba(255,255,255,.18)",
-                  color: "white",
-                  border: "1px solid rgba(255,255,255,.25)",
-                  borderRadius: "999px",
-                  padding: "10px 16px",
-                  fontWeight: "bold",
-                  fontSize: "14px",
+                  background: "rgba(255,255,255,.15)",
+                  padding: "8px 14px",
+                  borderRadius: "20px",
                 }}
               >
                 {item}
-              </button>
+              </span>
             ))}
           </div>
         </header>
@@ -284,32 +107,27 @@ export default function Home() {
               animation: "ticker 18s linear infinite",
             }}
           >
-            🔴 BREAKING: BPSC TRE 4.0 • Bihar Police • KVS Recruitment • Result • Admit Card • Private Teacher Jobs
+            🔴 BREAKING: BPSC TRE 4.0 • Bihar Police • KVS • Result • Private Jobs
           </div>
         </div>
 
         <div
           style={{
             margin: "15px",
-            borderRadius: "20px",
-            overflow: "hidden",
             background: "white",
-            boxShadow: "0 4px 12px rgba(0,0,0,.12)",
+            borderRadius: "18px",
+            overflow: "hidden",
+            boxShadow: "0 3px 10px rgba(0,0,0,.12)",
           }}
         >
           <img
             src={slides[current].image}
-            alt="Top News"
-            style={{
-              width: "100%",
-              height: "220px",
-              objectFit: "cover",
-            }}
+            style={{ width: "100%", height: "220px", objectFit: "cover" }}
           />
 
           <div
             style={{
-              padding: "16px",
+              padding: "15px",
               background: "linear-gradient(135deg,#0B63F6,#071A52)",
               color: "white",
             }}
@@ -317,105 +135,72 @@ export default function Home() {
             <span
               style={{
                 background: "#E53935",
-                padding: "6px 12px",
+                padding: "5px 10px",
                 borderRadius: "20px",
-                fontSize: "12px",
-                fontWeight: "bold",
               }}
             >
-              🔴 LIVE
+              LIVE
             </span>
 
-            <h2 style={{ margin: "12px 0 8px" }}>
-              {slides[current].title}
-            </h2>
-
-            <p style={{ margin: 0 }}>
-              Government Jobs • Private Jobs • Results • Admit Card
-            </p>
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                gap: "8px",
-                marginTop: "15px",
-              }}
-            >
-              {slides.map((_, i) => (
-                <div
-                  key={i}
-                  style={{
-                    width: "10px",
-                    height: "10px",
-                    borderRadius: "50%",
-                    background: i === current ? "#FFD700" : "#8FB3FF",
-                  }}
-                />
-              ))}
-            </div>
+            <h2>{slides[current].title}</h2>
+            <p>Government Jobs • Private Jobs • Results</p>
           </div>
         </div>
 
         <div style={{ padding: "15px" }}>
           <h2>🔥 Top Jobs Today</h2>
 
-          {[
-            "BPSC TRE 4.0",
-            "KVS Teacher Recruitment",
-            "Private School Teacher",
-            "Physics Wallah Hiring",
-            "Coaching Faculty Jobs",
-          ].map((job, i) => (
-            <div
-              key={i}
-              style={{
-                background: "white",
-                borderRadius: "16px",
-                padding: "15px",
-                marginTop: "12px",
-                boxShadow: "0 3px 10px rgba(0,0,0,.08)",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-                <strong>{job}</strong>
+          <div
+            style={{
+              background: "white",
+              padding: "15px",
+              borderRadius: "14px",
+              marginTop: "10px",
+            }}
+          >
+            <strong>BPSC TRE 4.0</strong>
 
-                <span
-                  style={{
-                    background: "#0B63F6",
-                    color: "white",
-                    padding: "4px 10px",
-                    borderRadius: "10px",
-                    fontSize: "12px",
-                  }}
-                >
-                  NEW
-                </span>
-              </div>
+            <p>Vacancy • Eligibility • Last Date</p>
 
-              <p style={{ color: "#666" }}>
-                Vacancy • Eligibility • Last Date
-              </p>
-
+            <Link href="/jobs/bpsc-tre-4">
               <button
                 style={{
+                  width: "100%",
+                  padding: "12px",
                   background: "#071A52",
                   color: "white",
                   border: "none",
-                  padding: "10px 15px",
-                  borderRadius: "8px",
+                  borderRadius: "10px",
                 }}
               >
                 View Details
               </button>
-            </div>
-          ))}
+            </Link>
+          </div>
+
+          <div
+            style={{
+              background: "white",
+              padding: "15px",
+              borderRadius: "14px",
+              marginTop: "10px",
+            }}
+          >
+            <strong>KVS Teacher Recruitment</strong>
+            <p>Coming Soon</p>
+          </div>
+
+          <div
+            style={{
+              background: "white",
+              padding: "15px",
+              borderRadius: "14px",
+              marginTop: "10px",
+            }}
+          >
+            <strong>Private School Teacher</strong>
+            <p>Open Hiring</p>
+          </div>
         </div>
 
         <div style={{ padding: "15px" }}>
@@ -435,18 +220,17 @@ export default function Home() {
               "Admit Card",
               "Current Affairs",
               "Scholarship",
-            ].map((cat) => (
+            ].map((c) => (
               <div
-                key={cat}
+                key={c}
                 style={{
                   background: "white",
                   padding: "18px",
-                  borderRadius: "14px",
                   textAlign: "center",
-                  boxShadow: "0 2px 8px rgba(0,0,0,.08)",
+                  borderRadius: "12px",
                 }}
               >
-                {cat}
+                {c}
               </div>
             ))}
           </div>
@@ -463,8 +247,6 @@ export default function Home() {
             padding: "14px 18px",
             borderRadius: "40px",
             textDecoration: "none",
-            fontWeight: "bold",
-            boxShadow: "0 4px 12px rgba(0,0,0,.25)",
           }}
         >
           WhatsApp
@@ -472,4 +254,4 @@ export default function Home() {
       </main>
     </>
   );
-              }
+                }
