@@ -7,15 +7,15 @@ export default function Home() {
   const slides = [
     {
       title: "BPSC TRE 4.0 Notification",
-      image: "https://picsum.photos/900/450?1",
+      image: "/hero1.svg",
     },
     {
       title: "KVS Teacher Recruitment",
-      image: "https://picsum.photos/900/450?2",
+      image: "/hero2.svg",
     },
     {
       title: "Private School Teacher Jobs",
-      image: "https://picsum.photos/900/450?3",
+      image: "/hero3.svg",
     },
   ];
 
@@ -68,25 +68,18 @@ export default function Home() {
               whiteSpace: "nowrap",
             }}
           >
-            {[
-              "🏠 Home",
-              "📢 Jobs",
-              "📄 Result",
-              "🎫 Admit",
-              "🎓 Scholarship",
-              "🏫 Private",
-            ].map((item) => (
-              <span
-                key={item}
-                style={{
-                  background: "rgba(255,255,255,.15)",
-                  padding: "8px 14px",
-                  borderRadius: "20px",
-                }}
-              >
-                {item}
-              </span>
-            ))}
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <span style={chipStyle}>🏠 Home</span>
+            </Link>
+
+            <Link href="/jobs" style={{ textDecoration: "none" }}>
+              <span style={chipStyle}>📢 Jobs</span>
+            </Link>
+
+            <span style={chipStyle}>📄 Result</span>
+            <span style={chipStyle}>🎫 Admit</span>
+            <span style={chipStyle}>🎓 Scholarship</span>
+            <span style={chipStyle}>🏫 Private</span>
           </div>
         </header>
 
@@ -254,4 +247,12 @@ export default function Home() {
       </main>
     </>
   );
-                }
+}
+
+const chipStyle = {
+  background: "rgba(255,255,255,.15)",
+  padding: "8px 14px",
+  borderRadius: "20px",
+  color: "white",
+  display: "inline-block",
+} as const;
