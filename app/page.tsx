@@ -35,6 +35,7 @@ import BreakingTicker from "@/components/BreakingTicker";export default function
               fontSize: "15px",
             }}
           />
+          <NavBar />
 <BreakingTicker />
           <div
             style={{
