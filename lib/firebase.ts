@@ -3,12 +3,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "PASTE_API_KEY",
-  authDomain: "PASTE_AUTH_DOMAIN",
-  projectId: "PASTE_PROJECT_ID",
-  storageBucket: "PASTE_STORAGE_BUCKET",
-  messagingSenderId: "PASTE_SENDER_ID",
-  appId: "PASTE_APP_ID",
+  apiKey: "AIzaSyDkVE25g2PPGxxtjX-nyOyBtlNXjOqfXSE",
+  authDomain: "shikshaupdate-admin-4eddc.firebaseapp.com",
+  projectId: "shikshaupdate-admin-4eddc",
+  storageBucket: "shikshaupdate-admin-4eddc.firebasestorage.app",
+  messagingSenderId: "606631771948",
+  appId: "1:606631771948:web:10359794d84c843d95b689",
 };
 
 const app = initializeApp(firebaseConfig);
