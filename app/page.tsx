@@ -110,18 +110,26 @@ export default function Home() {
 
         <p>Government Jobs • Private Jobs • Results</p>
 
-        <row justify=center gap=1>
-          {#each slides as _, i}
-            <box
-              key={i}
-              background={i === current ? "#FFD700" : "#ffffff66"}
-              radius=full
-              padding=1
-              width=10
-              height=10
-            />
-          {/each}
-        </row>
+        <div
+  style={{
+    display: "flex",
+    justifyContent: "center",
+    gap: "8px",
+    marginTop: "15px",
+  }}
+>
+  {slides.map((_, i) => (
+    <div
+      key={i}
+      style={{
+        width: "10px",
+        height: "10px",
+        borderRadius: "50%",
+        background: i === current ? "#FFD700" : "rgba(255,255,255,.5)",
+      }}
+    />
+  ))}
+</div>
       </div>
 
       <div style={{ padding: "15px" }}>
