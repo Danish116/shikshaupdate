@@ -1,4 +1,4 @@
-export default function Home() {
+import BreakingTicker from "@/components/BreakingTicker";export default function Home() {
   return (
     <>
       <style>{`
@@ -35,7 +35,7 @@ export default function Home() {
               fontSize: "15px",
             }}
           />
-
+<BreakingTicker />
           <div
             style={{
               display: "flex",
