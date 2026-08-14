@@ -47,7 +47,7 @@ export default function Home() {
           padding: "20px",
         }}
       >
-        <h1 style={{ color: "#FFD700", margin: 0 }}>🎓 Siksha Update</h1>
+        <h1 style={{ color: "#FFD700", margin: 0 }}>🎓 Shiksha Update</h1>
         <p>Fast • Accurate • Trusted</p>
 
         <input
