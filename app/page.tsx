@@ -161,12 +161,236 @@ import BreakingTicker from "@/components/BreakingTicker";export default function
                   justifyContent: "space-between",
                 }}
               >
+"use client";
+
+import { useEffect, useState } from "react";
+
+export default function Home() {
+  const slides = [
+    {
+      title: "BPSC TRE 4.0 Notification",
+      image:
+        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200",
+    },
+    {
+      title: "KVS Teacher Recruitment",
+      image:
+        "https://images.unsplash.com/photo-1513258496099-48168024aec0?w=1200",
+    },
+    {
+      title: "Private School Teacher Jobs",
+      image:
+        "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200",
+    },
+  ];
+
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 3500);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <>
+      <style>{`
+        *{box-sizing:border-box}
+        body{margin:0;background:#f5f7fb;font-family:Arial,sans-serif}
+        @keyframes ticker{
+          from{transform:translateX(100%)}
+          to{transform:translateX(-100%)}
+        }
+      `}</style>
+
+      <main>
+        <header
+          style={{
+            background: "linear-gradient(135deg,#071A52,#0B63F6)",
+            color: "white",
+            padding: "20px",
+            position: "sticky",
+            top: 0,
+            zIndex: 1000,
+          }}
+        >
+          <h1 style={{ color: "#FFD700", margin: 0 }}>🎓 Siksha Update</h1>
+          <p style={{ margin: "6px 0 12px" }}>Fast • Accurate • Trusted</p>
+
+          <input
+            placeholder="🔍 Search Jobs, Results, Admit Card..."
+            style={{
+              width: "100%",
+              padding: "12px",
+              borderRadius: "30px",
+              border: "none",
+              outline: "none",
+              fontSize: "15px",
+            }}
+          />
+
+          <div
+            style={{
+              display: "flex",
+              overflowX: "auto",
+              gap: "10px",
+              marginTop: "16px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {[
+              "🏠 Home",
+              "📢 Jobs",
+              "📄 Result",
+              "🎫 Admit",
+              "📚 Answer Key",
+              "🎓 Scholarship",
+              "🏫 Private",
+              "📰 Current",
+            ].map((item) => (
+              <button
+                key={item}
+                style={{
+                  background: "rgba(255,255,255,.18)",
+                  color: "white",
+                  border: "1px solid rgba(255,255,255,.25)",
+                  borderRadius: "999px",
+                  padding: "10px 16px",
+                  fontWeight: "bold",
+                  fontSize: "14px",
+                }}
+              >
+                {item}
+              </button>
+            ))}
+          </div>
+        </header>
+
+        <div
+          style={{
+            background: "#E53935",
+            color: "white",
+            overflow: "hidden",
+            whiteSpace: "nowrap",
+            padding: "10px 0",
+            fontWeight: "bold",
+          }}
+        >
+          <div
+            style={{
+              display: "inline-block",
+              paddingLeft: "100%",
+              animation: "ticker 18s linear infinite",
+            }}
+          >
+            🔴 BREAKING: BPSC TRE 4.0 • Bihar Police • KVS Recruitment • Result • Admit Card • Private Teacher Jobs
+          </div>
+        </div>
+
+        <div
+          style={{
+            margin: "15px",
+            borderRadius: "20px",
+            overflow: "hidden",
+            background: "white",
+            boxShadow: "0 4px 12px rgba(0,0,0,.12)",
+          }}
+        >
+          <img
+            src={slides[current].image}
+            alt="Top News"
+            style={{
+              width: "100%",
+              height: "220px",
+              objectFit: "cover",
+            }}
+          />
+
+          <div
+            style={{
+              padding: "16px",
+              background: "linear-gradient(135deg,#0B63F6,#071A52)",
+              color: "white",
+            }}
+          >
+            <span
+              style={{
+                background: "#E53935",
+                padding: "6px 12px",
+                borderRadius: "20px",
+                fontSize: "12px",
+                fontWeight: "bold",
+              }}
+            >
+              🔴 LIVE
+            </span>
+
+            <h2 style={{ margin: "12px 0 8px" }}>
+              {slides[current].title}
+            </h2>
+
+            <p style={{ margin: 0 }}>
+              Government Jobs • Private Jobs • Results • Admit Card
+            </p>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "8px",
+                marginTop: "15px",
+              }}
+            >
+              {slides.map((_, i) => (
+                <div
+                  key={i}
+                  style={{
+                    width: "10px",
+                    height: "10px",
+                    borderRadius: "50%",
+                    background: i === current ? "#FFD700" : "#8FB3FF",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div style={{ padding: "15px" }}>
+          <h2>🔥 Top Jobs Today</h2>
+
+          {[
+            "BPSC TRE 4.0",
+            "KVS Teacher Recruitment",
+            "Private School Teacher",
+            "Physics Wallah Hiring",
+            "Coaching Faculty Jobs",
+          ].map((job, i) => (
+            <div
+              key={i}
+              style={{
+                background: "white",
+                borderRadius: "16px",
+                padding: "15px",
+                marginTop: "12px",
+                boxShadow: "0 3px 10px rgba(0,0,0,.08)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
                 <strong>{job}</strong>
+
                 <span
                   style={{
                     background: "#0B63F6",
                     color: "white",
-                    padding: "4px 8px",
+                    padding: "4px 10px",
                     borderRadius: "10px",
                     fontSize: "12px",
                   }}
@@ -178,11 +402,22 @@ import BreakingTicker from "@/components/BreakingTicker";export default function
               <p style={{ color: "#666" }}>
                 Vacancy • Eligibility • Last Date
               </p>
+
+              <button
+                style={{
+                  background: "#071A52",
+                  color: "white",
+                  border: "none",
+                  padding: "10px 15px",
+                  borderRadius: "8px",
+                }}
+              >
+                View Details
+              </button>
             </div>
           ))}
         </div>
 
-        {/* Categories */}
         <div style={{ padding: "15px" }}>
           <h2>📚 Categories</h2>
 
@@ -217,7 +452,6 @@ import BreakingTicker from "@/components/BreakingTicker";export default function
           </div>
         </div>
 
-        {/* WhatsApp Button */}
         <a
           href="#"
           style={{
@@ -238,4 +472,4 @@ import BreakingTicker from "@/components/BreakingTicker";export default function
       </main>
     </>
   );
-                  }
+              }
