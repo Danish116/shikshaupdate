@@ -1,9 +1,9 @@
 export default function BPSCTRE4() {
   return (
-    <main style={{fontFamily:"Arial",background:"#f5f7fb",padding:"15px"}}>
+    <main style={{fontFamily:"Arial",background:"#f5f7fb",padding:"20px"}}>
       <h1 style={{color:"#071A52"}}>BPSC TRE 4.0 Recruitment 2026</h1>
 
-      <div style={{background:"#fff",padding:"15px",borderRadius:"15px",marginTop:"15px"}}>
+      <div style={{background:"white",padding:"15px",borderRadius:"15px",marginTop:"15px"}}>
         <h2>Important Dates</h2>
         <table style={{width:"100%"}}>
           <tbody>
@@ -14,19 +14,25 @@ export default function BPSCTRE4() {
         </table>
       </div>
 
-      <div style={{background:"#fff",padding:"15px",borderRadius:"15px",marginTop:"15px"}}>
+      <div style={{background:"white",padding:"15px",borderRadius:"15px",marginTop:"15px"}}>
         <h2>Eligibility</h2>
         <p>BPSC rules ke according update hoga.</p>
+      </div>
+
+      <div style={{background:"white",padding:"15px",borderRadius:"15px",marginTop:"15px"}}>
+        <h2>Vacancy Details</h2>
+        <p>Category-wise seat yahan aayegi.</p>
       </div>
 
       <button style={{
         width:"100%",
         padding:"15px",
         background:"#0B63F6",
-        color:"#fff",
+        color:"white",
         border:"none",
         borderRadius:"12px",
-        marginTop:"20px"
+        marginTop:"20px",
+        fontWeight:"bold"
       }}>
         Official Notification PDF
       </button>
