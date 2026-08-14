@@ -6,30 +6,33 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f6f8fb;
+  background: #f5f7fb;
   color: #222;
 }
 
-h1 {
-  color: #0b63ce;
-  margin-bottom: 10px;
-}
-
-p {
-  margin-bottom: 10px;
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 button {
-  background: #0b63ce;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
+  font-family: inherit;
 }
 
-input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+.news-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  margin-top: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.news-card h3 {
+  color: #0b5ed7;
+  margin-bottom: 8px;
+}
+
+.news-card:hover {
+  transform: translateY(-2px);
+  transition: .2s;
 }
